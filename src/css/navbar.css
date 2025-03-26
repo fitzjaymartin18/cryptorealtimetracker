@@ -1,0 +1,36 @@
+.navLinks {
+  /* border:  2px solid black; */
+  /* display: flex; */
+  justify-content: space-between;
+  font-size: large;
+  font-family: sans-serif;
+}
+
+.navLogo {
+  /* border: 2px solid black; */
+  padding: 15px;
+  font-size: 20px;
+  background-color: rgb(0, 0, 17);
+}
+
+span {
+  color: rgb(255, 166, 0);
+}
+
+.nav-logo {
+  color: white;
+  font-weight: bold;
+}
+
+.navSection {
+  display: flex;
+  justify-content: space-evenly;
+  /* border: 2px solid blue; */
+  padding: 10px;
+}
+
+.navLink {
+  font-size: 18px;
+  /* border: 2px solid red; */
+  color: black;
+}

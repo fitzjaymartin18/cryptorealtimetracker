@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import "../css/navbar.css";
 
 function Navbar() {
   return (
     <>
       <div className="navLinks">
         <div className="navLogo">
-          <Link to="/">Crypto Real Time Tracker</Link>
+          <Link to="/" className="nav-logo">CR<span>T</span>T</Link>
         </div>
         <div className="navSection">
           <Link to="/" className="navLink">

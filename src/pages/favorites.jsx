@@ -1,7 +1,10 @@
+import "../css/favorites.css"
+
 function Favorites() {
   return (
     <>
-      <div>No Favorites yet.</div>
+      <hr />
+      <div className="favorite-message">"Add a coin"</div>
     </>
   );
 }

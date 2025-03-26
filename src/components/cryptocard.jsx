@@ -1,10 +1,14 @@
 import "../css/cryptocard.css";
-import { useState } from "react";
 
-function CryptoCard() {
+function CryptoCard({ coin }) {
   function AddFavorites({ currency }) {
     alert("Added to favorites");
   }
+
+  const priceStyle = { color: coin.current_price < 0 ? "red" : "green" };
+  const percentageStyle = {
+    color: coin.market_cap_change_percentage_24h < 0 ? "red" : "green",
+  };
 
   return (
     <>
@@ -13,13 +17,19 @@ function CryptoCard() {
           <div className="starBtn" onClick={AddFavorites}>
             ★
           </div>
-          <div className="cryptoLogo">dfsdf</div>
-          <div className="cryptoTitle">BTC</div>
+          <div className="cryptoLogo">
+            <img src={coin.image} alt="" />
+          </div>
+          <div className="cryptoTitle">{coin.symbol.toUpperCase()}</div>
         </div>
 
         <div className="cryptoValue">
-          <div className="cyrptoPrice">$1000</div>
-          <div className="cryptoPercentage">-0.27%</div>
+          <div className="cyrptoPrice" style={priceStyle}>
+            ${coin.current_price}
+          </div>
+          <div className="cryptoPercentage" style={percentageStyle}>
+            {coin.market_cap_change_percentage_24h}%
+          </div>
         </div>
       </div>
     </>

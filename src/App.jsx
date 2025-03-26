@@ -1,5 +1,4 @@
 import "./App.css";
-import { useState } from "react";
 import Navbar from "../src/components/navbar";
 import Favorites from "./pages/favorites";
 import { Routes, Route } from "react-router-dom";

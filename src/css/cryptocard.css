@@ -2,11 +2,12 @@
   border: 2px solid white;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 0 10px 0 10px;
+  /* align-items: center; */
+  padding: 5px 10px 5px 10px;
   position: relative;
   justify-content: space-between;
-  gap: 300px;
+  font-family: sans-serif;
+  border-bottom: 1px solid rgb(216, 216, 216);
 }
 
 .cryptoCategory {
@@ -32,4 +33,31 @@
 
 .starBtn {
     cursor: pointer;
+    color: grey;
+}
+.cryptoTitle {
+  color: black;
+}
+
+.cryptoLogo {
+  color: black;
+  width: 50;
+  height: auto;
+  /* border: 2px solid black; */
+  position: relative;
+}
+
+.cryptoLogo > img {
+  object-fit: cover;
+  width: 5vw;
+  height: auto;
+  /* border: 2px solid black; */
+}
+
+.cryptoPercentage {
+  font-size: 10px;
+}
+
+.cyrptoPrice {
+  font-size: 15px;
 }
