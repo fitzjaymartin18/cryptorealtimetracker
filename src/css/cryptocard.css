@@ -18,17 +18,20 @@
 }
 
 .cryptoValue {
-  border: 2px solid white;
+  /* border: 2px solid black; */
   padding: 0;
   position: relative;
+  align-content: center;
+  
 }
 
 .cryptoValue > div {
+  display: flex;
   justify-content: end;
   color: red;
-  text-align: end;
   padding-right: 10px;
-  position: relative;
+  position: relative;``
+  /* border: 2px solid red; */
 }
 
 .starBtn {
@@ -56,6 +59,8 @@
 
 .cryptoPercentage {
   font-size: 10px;
+  align-items: center;
+
 }
 
 .cyrptoPrice {
