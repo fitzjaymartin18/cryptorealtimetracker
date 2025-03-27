@@ -1,6 +1,6 @@
 import CryptoCard from "../components/cryptocard";
 import "../css/home.css";
-import { getCoins, searchCoins } from "../services/api";
+import { getCoins } from "../services/api";
 import { useEffect, useState } from "react";
 
 function Home() {
@@ -25,11 +25,45 @@ function Home() {
     loadCoins();
   }, []);
 
-  const handleSearch = (e) => {
-    if (e.key === "Enter") {
-      alert(search);
-    }
-  };
+  useEffect(() => {
+    setLoading(true);
+    const fetchSearchCoins = async () => {
+      if (search.trim() === "") {
+        const getLoadCoins = await getCoins();
+        setCoins(getLoadCoins);
+      } else {
+        try {
+          const getSearchCoins = await getCoins();
+          const filteredCoinsID = getSearchCoins.filter((coin) =>
+            coin.id.toLowerCase().startsWith(search.toLowerCase())
+          );
+
+          const filteredCoinsSymbol = getSearchCoins.filter((coin) =>
+            coin.symbol.toLowerCase().startsWith(search.toLowerCase())
+          );
+
+          // if (filteredCoinsID.length > 0 && filteredCoinsSymbol.length > 0) {
+          //   setCoins([...filteredCoinsSymbol, ...filteredCoinsID]);
+          // } else {
+            setCoins(
+              filteredCoinsID.length > 0 ? filteredCoinsID : filteredCoinsSymbol
+            );
+          // }
+        } catch (err) {
+          console.log(err);
+          setError("Coin not available");
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    const delaySearch = setTimeout(() => {
+      fetchSearchCoins();
+    }, 100);
+
+    return () => clearTimeout(delaySearch);
+  }, [search]);
 
   return (
     <>
@@ -41,7 +75,6 @@ function Home() {
           className="home-search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          onKeyDown={handleSearch}
         />
       </div>
 

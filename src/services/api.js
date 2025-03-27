@@ -20,17 +20,3 @@ export const getCoins = async () => {
     console.error("Error:", err);
   }
 };
-
-export const searchCoins = async (query) => {
-  try {
-    const response = await fetch(
-      `${BASE_URL}?vs_currency=usd&ids=${encodeURIComponent(query)}`,
-      options
-    );
-    const data = await response.json();
-    return data;
-  } catch (err) {
-    console.error("Error:", err);
-  }
-};
-''
