@@ -37,7 +37,16 @@
 .starBtn {
     cursor: pointer;
     color: grey;
+    font-size: 20px;
+    transition: color 0.3s ease; 
+    /* border: 2px solid black; */
 }
+
+/* .starBtn:hover {
+  color: rgb(255, 187, 0);
+  transition: 0.3s ease;
+} */
+
 .cryptoTitle {
   color: black;
   font-size: 10px;
