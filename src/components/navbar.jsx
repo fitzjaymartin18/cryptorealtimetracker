@@ -6,7 +6,9 @@ function Navbar() {
     <>
       <div className="navLinks">
         <div className="navLogo">
-          <Link to="/" className="nav-logo">CR<span>T</span>T</Link>
+          <Link to="/" className="nav-logo">
+            CR<span>T</span>T
+          </Link>
         </div>
         <div className="navSection">
           <Link to="/" className="navLink">

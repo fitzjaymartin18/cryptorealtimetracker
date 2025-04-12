@@ -45,9 +45,9 @@ function Home() {
           // if (filteredCoinsID.length > 0 && filteredCoinsSymbol.length > 0) {
           //   setCoins([...filteredCoinsSymbol, ...filteredCoinsID]);
           // } else {
-            setCoins(
-              filteredCoinsID.length > 0 ? filteredCoinsID : filteredCoinsSymbol
-            );
+          setCoins(
+            filteredCoinsID.length > 0 ? filteredCoinsID : filteredCoinsSymbol
+          );
           // }
         } catch (err) {
           console.log(err);

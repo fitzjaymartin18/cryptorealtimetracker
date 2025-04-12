@@ -51,12 +51,8 @@ body {
   /* border: 2px solid blue; */
 }
 
-
-
 .cryptoCard {
   border: 2px solid red;
   display: flex;
   justify-content: center;
 }
-
-
